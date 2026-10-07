@@ -1,0 +1,64 @@
+***Starting server on port 49619 ***
+Loading net-file from 'Data0-0/State_Street_4500_South.net.xml' ... done (2ms).
+Loading additional-files from 'Data0-0/State_Street_4500_South.det.xml' ... done (8ms).
+Loading done.
+Simulation version 1.12.0 started with time: 0.00
+Warning: Vehicle '1314' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=1906.00.
+Warning: Vehicle '1777' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=2425.00.
+Warning: Vehicle '3524' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=4406.00.
+Warning: Vehicle '7869' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=9278.00.
+Warning: Vehicle '8206' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=9653.00.
+Warning: Vehicle '14008' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=16443.00.
+Warning: Vehicle '16337' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=18913.00.
+Warning: Vehicle '19799' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=22426.00.
+Warning: Vehicle '20285' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=22927.00.
+Warning: Vehicle '20979' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=23661.00.
+Warning: Vehicle '22570' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=25271.00.
+Warning: Vehicle '23503' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=26237.00.
+Warning: Vehicle '24609' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=27353.00.
+Warning: Vehicle '26274' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=29043.00.
+Warning: Vehicle '36606' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=37876.00.
+Warning: Vehicle '36895' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=38127.00.
+Warning: Vehicle '38502' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=39540.00.
+Warning: Vehicle '40300' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=41020.00.
+Warning: Vehicle '43503' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=44502.00.
+Simulation ended at time: 55001.00
+Reason: TraCI requested termination.
+Performance: 
+ Duration: 1202.97s
+ TraCI-Duration: 1146.80s
+ Real time factor: 45.7209
+ UPS: 6198.025061
+Vehicles: 
+ Inserted: 47088
+ Running: 0
+ Waiting: 0
+
+/home/barbienigam/miniforge3/envs/drl/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:523: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/home/barbienigam/miniforge3/envs/drl/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:524: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/home/barbienigam/miniforge3/envs/drl/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:525: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/home/barbienigam/miniforge3/envs/drl/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:526: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/home/barbienigam/miniforge3/envs/drl/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:527: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/home/barbienigam/miniforge3/envs/drl/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:532: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+Using TensorFlow backend.
+[[<Phase.E: [2]>, <Phase.W: [6]>], [<Phase.E: [2]>, <Phase.E_L: [5]>], [<Phase.W_L: [1]>, <Phase.W: [6]>], [<Phase.W_L: [1]>, <Phase.E_L: [5]>], [<Phase.NN_L: [8, 3]>, <Phase.SS_L: [4, 7]>], [<Phase.NN_L: [8, 3]>, <Phase.S: [4]>], [<Phase.NN_L: [8, 3]>, <Phase.N_L: [3]>], [<Phase.N: [8]>, <Phase.SS_L: [4, 7]>], [<Phase.N: [8]>, <Phase.S: [4]>], [<Phase.S_L: [7]>, <Phase.SS_L: [4, 7]>], [<Phase.S_L: [7]>, <Phase.N_L: [3]>]]
+ Retrying in 1 seconds
+0 seconds passed
+5000 seconds passed
+10000 seconds passed
+15000 seconds passed
+20000 seconds passed
+25000 seconds passed
+30000 seconds passed
+35000 seconds passed
+40000 seconds passed
+45000 seconds passed
+50000 seconds passed
+55000 seconds passed
+0-0 Completed iteration trips 47088 loss 42.138625339789044 steps 55001 rush 64.3097111446433 dead 19.463586979952616
