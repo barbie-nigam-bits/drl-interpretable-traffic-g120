@@ -1,0 +1,14 @@
+{
+  "params_figure1_8phases_8combos": 256,
+  "params_murray_10phases_11combos": 352,
+  "monotonicity_variable_sweeps_checked": 2400,
+  "monotonicity_violations": 0,
+  "negative_control_sign_set": [
+    -1,
+    1
+  ],
+  "deriv_finite_diff": 7.655025132891069,
+  "deriv_p_w_(ws)^(p-1)": 7.655025130786364,
+  "deriv_p_w^p_s^(p-1)": 7.655025130786363,
+  "deriv_as_typeset_w_p_s^(p-1)": 5.567718479901413
+}

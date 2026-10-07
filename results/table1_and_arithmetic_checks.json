@@ -1,0 +1,30 @@
+{
+  "Low": {
+    "total": 45112,
+    "avg_rate": 1.04,
+    "implied_seconds": 43376.92307692308,
+    "implied_hours": 12.0491452991453,
+    "rate_if_14h": 0.895079365079365,
+    "rate_if_12h": 1.0442592592592592
+  },
+  "Medium": {
+    "total": 51298,
+    "avg_rate": 1.19,
+    "implied_seconds": 43107.56302521009,
+    "implied_hours": 11.974323062558359,
+    "rate_if_14h": 1.0178174603174603,
+    "rate_if_12h": 1.1874537037037036
+  },
+  "High": {
+    "total": 61261,
+    "avg_rate": 1.42,
+    "implied_seconds": 43141.54929577465,
+    "implied_hours": 11.983763693270735,
+    "rate_if_14h": 1.2154960317460317,
+    "rate_if_12h": 1.4180787037037037
+  },
+  "cmaes_600_episodes": 600,
+  "params_352": 352,
+  "params_256": 256,
+  "episodes_4000_in_years_if_1_episode_is_1_day": 10.95890410958904
+}
