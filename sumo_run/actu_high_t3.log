@@ -1,0 +1,65 @@
+nohup: ignoring input
+/home/barbienigam/miniforge3/envs/drl/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:523: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/home/barbienigam/miniforge3/envs/drl/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:524: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/home/barbienigam/miniforge3/envs/drl/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:525: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/home/barbienigam/miniforge3/envs/drl/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:526: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/home/barbienigam/miniforge3/envs/drl/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:527: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/home/barbienigam/miniforge3/envs/drl/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:532: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+Using TensorFlow backend.
+[[<Phase.E: [2]>, <Phase.W: [6]>], [<Phase.E: [2]>, <Phase.E_L: [5]>], [<Phase.W_L: [1]>, <Phase.W: [6]>], [<Phase.W_L: [1]>, <Phase.E_L: [5]>], [<Phase.NN_L: [8, 3]>, <Phase.SS_L: [4, 7]>], [<Phase.NN_L: [8, 3]>, <Phase.S: [4]>], [<Phase.NN_L: [8, 3]>, <Phase.N_L: [3]>], [<Phase.N: [8]>, <Phase.SS_L: [4, 7]>], [<Phase.N: [8]>, <Phase.S: [4]>], [<Phase.S_L: [7]>, <Phase.SS_L: [4, 7]>], [<Phase.S_L: [7]>, <Phase.N_L: [3]>]]
+ Retrying in 1 seconds
+***Starting server on port 40377 ***
+Loading net-file from 'Data3-0/State_Street_4500_South.net.xml' ... done (1ms).
+Loading additional-files from 'Data3-0/State_Street_4500_South.det.xml' ... done (14ms).
+Loading done.
+Simulation version 1.12.0 started with time: 0.00
+0 seconds passed
+Warning: Vehicle '2051' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=2312.00.
+Warning: Vehicle '3721' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=3716.00.
+5000 seconds passed
+Warning: Vehicle '9962' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=9195.00.
+10000 seconds passed
+Warning: Vehicle '11688' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=10777.00.
+15000 seconds passed
+Warning: Vehicle '16698' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=15055.00.
+Warning: Vehicle '21533' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=18702.00.
+Warning: Vehicle '21878' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=18944.00.
+20000 seconds passed
+Warning: Vehicle '28852' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=23972.00.
+Warning: Vehicle '30186' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=24962.00.
+25000 seconds passed
+Warning: Vehicle '33366' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=27215.00.
+Warning: Vehicle '34895' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=28179.00.
+Warning: Vehicle '36094' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=29057.00.
+30000 seconds passed
+Warning: Vehicle '37598' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=30099.00.
+Warning: Vehicle '41738' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=32946.00.
+35000 seconds passed
+40000 seconds passed
+Warning: Vehicle '56208' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=42633.00.
+Warning: Vehicle '57516' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=43693.00.
+45000 seconds passed
+Warning: Vehicle '59344' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=45301.00.
+Warning: Vehicle '61285' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=47218.00.
+50000 seconds passed
+Warning: Vehicle '64254' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=50294.00.
+55000 seconds passed
+Simulation ended at time: 55001.00
+Reason: TraCI requested termination.
+Performance: 
+ Duration: 1811.78s
+ TraCI-Duration: 1734.22s
+ Real time factor: 30.3574
+ UPS: 6075.004609
+Vehicles: 
+ Inserted: 64395
+ Running: 0
+ Waiting: 0
+
+3-0 Completed iteration trips 64395 loss 54.71401397624041 steps 55001 rush 75.85388009845252 dead 24.09148030942338
