@@ -14,6 +14,8 @@ paper's description; we did not read networks.py, so details of the authors' los
 
 G(s)_a = ( sum_{i<12} (w_ai s_ai)^p_ai ) * prod_{j>=12, s_aj>0} (w_aj s_aj)^p_aj      (cf. display() in drxq.py)
 w = exp(a) > 0 ; exponents p clipped to [0.1, 4]; init w=1, p=1 (Alg. 1 line 4).
+
+Usage:  python teacher_student.py [n_seeds]      (default 5; the README numbers use 10, about 8 minutes)
 """
 import json, os, sys, time
 import numpy as np
@@ -43,7 +45,9 @@ def hidden_truth(s):
 
 def fit_teacher(rng, n=30000):
     X = make_states(n, rng); Y = hidden_truth(X) + rng.normal(0, 0.03, (n, A))
-    mlp = MLPRegressor((64, 64), activation="relu", max_iter=60, random_state=int(rng.integers(1e9)), early_stopping=False)
+    # NOTE: hidden_layer_sizes must be passed by keyword. Newer scikit-learn versions put `loss` first in the signature.
+    mlp = MLPRegressor(hidden_layer_sizes=(64, 64), activation="relu", max_iter=60,
+                       random_state=int(rng.integers(1e9)), early_stopping=False)
     mlp.fit(X.reshape(n, -1), Y)
     return mlp
 
@@ -112,8 +116,8 @@ def train(kind, Xtr, Qtr, Xte, Qte, rng, steps=2500, bs=256, lr=0.03, log_every=
 
 if __name__ == "__main__":
     seeds = int(sys.argv[1]) if len(sys.argv) > 1 else 5
-    out_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results") if os.path.isdir(
-        os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")) else "."
+    here = os.path.dirname(os.path.abspath(__file__))
+    out_dir = os.path.join(here, "..", "results") if os.path.isdir(os.path.join(here, "..", "results")) else "."
     res = {k: [] for k in ("DRQ", "DRSQ", "DRHQ")}; curves = {k: [] for k in res}; rand_base, heur_base = [], []
     t0 = time.time()
     for sd in range(seeds):
