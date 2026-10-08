@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+# large SUMO outputs: keep out of the repo
+tripinfo.xml
+*.xml
+Data*/
