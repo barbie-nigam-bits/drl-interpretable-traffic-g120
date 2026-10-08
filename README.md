@@ -9,7 +9,8 @@ This repository is our **proof of work** for the assignment. It contains (1) cod
 definitions, (2) our run of the authors' code in SUMO, and (3) independent checks of the numbers that run produced.
 
 **Scope.** We did **not** retrain DQN or DRHQ in SUMO (compute and time limits), and we do **not** claim to reproduce the
-paper's 19.4% / 30% delay reductions. What we ran in SUMO is the authors' *actuated* baseline, one episode per demand level.
+paper's 19.4% / 30% delay reductions. What we ran in SUMO is the authors' *actuated* baseline: one episode each for Low and
+Medium demand and two episodes for High demand.
 
 ---
 
@@ -36,9 +37,10 @@ paper's 19.4% / 30% delay reductions. What we ran in SUMO is the authors' *actua
 11 actions × 16 inputs × (weight, exponent) = 352.
 
 ### 2.2 Monotonicity (Definition 1 / Lemma 1)
-2,400 random single-variable sweeps over random weights and exponents: **0 sign changes**. A deliberately non-monotone
-quadratic fails the same test (negative control), so the test can fail. Plot: `results/monotonicity.png`.
-Our reading of Eq. (1) is a product of the state-variable sum and the clearance-flag sum; confirm against the typeset paper.
+2,400 random single-variable sweeps over random positive weights and random exponents: **0 sign changes**. A deliberately
+non-monotone quadratic fails the same test (negative control), so the test can fail. Plot: `results/monotonicity.png`.
+We only tested positive weights. Our reading of Eq. (1) is a product of the state-variable sum and the clearance-flag sum;
+confirm against the typeset paper.
 
 ### 2.3 Teacher–student comparison of DRQ / DRSQ / DRHQ (`src/teacher_student.py`)
 A synthetic MLP "teacher" (16,203 parameters) stands in for the Q-network. A 352-parameter polynomial "student" is trained
@@ -59,33 +61,48 @@ RL and no SUMO, and we did not read `networks.py`, so this is a sanity check of 
 verified against finite differences.
 
 ### 2.4 The authors' code, run in SUMO (`sumo_run/`)
-Authors' actuated controller, one episode per demand level, headless, no code patches:
+Authors' actuated controller, headless, no code patches, one episode per run:
 
 ```
 python -c "import main; main.run_trial('actu', <file>, 1, <trial>, render=False)"
 ```
 
-| Demand (`--file`) | Trips | Missed | Mean time lost | Max delay | Rush-hour mean |
+| Demand (`--file`), trial | Trips | Missed | Mean time lost | Max delay | Rush-hour mean |
 |---|---|---|---|---|---|
-| Low (0) | 47,088 | 0 | 42.14 s | 265.3 s | 64.31 s |
-| Medium (1) | 53,687 | 0 | 47.32 s | 331.2 s | 76.75 s |
-| High (2) | 64,395 | 0 | 54.71 s | 256.8 s | 75.85 s |
+| Low (0), trial 0 | 47,088 | 0 | 42.14 s | 265.3 s | 64.31 s |
+| Medium (1), trial 2 | 53,687 | 0 | 47.32 s | 331.2 s | 76.75 s |
+| High (2), trial 3 | 64,395 | 0 | 54.71 s | 256.8 s | 75.85 s |
+| High (2), trial 4 | 64,784 | 0 | 58.37 s | 377.5 s | 92.53 s |
 
 Every number above was recomputed from each run's `tripinfo.xml` with `checks/recompute_delay_from_tripinfo.py`.
-"Mean time lost" is the mean of SUMO's `timeLoss` per trip (`traci_env.get_delay`). We have **not** verified that this is
-the same metric the paper plots, so we do not claim these values match the paper's figures.
+"Mean time lost" is the mean of SUMO's `timeLoss` per trip (`traci_env.get_delay`).
 
-### 2.5 Observation: the printed "dead-hour" value is divided by the wrong count
+**Run-to-run variation.** The two High runs use the same demand file and differ by 3.7 s (about 7%) in mean time lost,
+16.7 s in rush-hour mean and 389 in trip count, so the runs are not deterministic and a single run is only an indication.
+
+**Comparison with the paper's Fig. 4 (actuated controller; values read off the plot by eye, approximate).**
+
+| Demand | Fig. 4 actuated (approx.) | Our runs |
+|---|---|---|
+| Low | about 42 s | 42.14 s |
+| Medium | about 46–47 s | 47.32 s |
+| High | about 67 s | 54.71 s and 58.37 s |
+
+Low and Medium are single runs, so their agreement may partly be luck. Both High runs are below the paper's value, by about
+13–18%. We could not explain this. SUMO 1.12.0 instead of the authors' 1.0.1 is an untested candidate.
+
+### 2.5 Observation: the printed "dead-hour" value appears to be divided by the wrong count
 In `traci_env.get_delay()` the last line returns `dh_loss / rh_trips`, the dead-hour total divided by the **rush-hour**
 trip count. The corrected value divides by the dead-hour trip count:
 
-| Demand | Printed by authors' code | Corrected | Dead-hour trips |
+| Run | Printed by authors' code | Corrected | Dead-hour trips |
 |---|---|---|---|
 | Low | 19.46 s | 30.85 s | 2,927 |
 | Medium | 27.56 s | 40.15 s | 3,476 |
-| High | 24.09 s | 37.40 s | 3,664 |
+| High, trial 3 | 24.09 s | 37.40 s | 3,664 |
+| High, trial 4 | 26.25 s | 40.50 s | 3,723 |
 
-It appears in all three runs. We do not know whether any published result uses this value.
+It appears in all four runs. We do not know whether any published result uses this value.
 
 ### 2.6 Demand data vs the paper's Table 1
 Each shipped demand file covers 14 hours (168 five-minute bins). Their sums differ from Table 1 by 4–5%:
@@ -94,11 +111,12 @@ Each shipped demand file covers 14 hours (168 five-minute bins). Their sums diff
 |---|---|---|---|
 | Low | 47,058 | 45,112 | 47,088 |
 | Medium | 53,848 | 51,298 | 53,687 |
-| High | 64,489 | 61,261 | 64,395 |
+| High | 64,489 | 61,261 | 64,395 and 64,784 |
 
-We could not reconcile these. Dividing Table 1's totals by its stated average rates gives about 12 h, not 14 h; we report this as
-an unexplained inconsistency, not as an error in the paper. Simulated trips differ from the file by +30, −161 and −94, which is
-within √N for each file; we did not check how the vehicles are generated.
+We could not reconcile these. Dividing Table 1's totals by its stated average rates gives about 12 h, not 14 h; we report this
+as an unexplained inconsistency, not as an error in the paper. Simulated trips differ from the file by +30, −161, −94 and +295,
+which is of the order of √N (217–254) for each file and is consistent with randomly sampled arrivals; we did not check how
+the vehicles are generated.
 
 ---
 
@@ -132,10 +150,11 @@ python -c "import main; main.run_trial('actu', 0, 1, 0, render=False)"
 python <this-repo>/checks/recompute_delay_from_tripinfo.py Data0-0/tripinfo.xml --file 0
 ```
 
-A Low-demand actuated episode took about 20 minutes on our machine.
+A Low-demand actuated episode took about 20 minutes on our machine; a High-demand episode took longer.
 
 ## 5. Limitations
-- One actuated episode per demand level; no seeds or confidence intervals.
+- One actuated episode for Low and Medium and two for High. The two High runs differ by about 7% in mean delay, so there are
+  no confidence intervals and single-run comparisons with the paper are only indicative.
 - No DQN, DRQ, DRSQ or DRHQ training in SUMO, so no comparison against the paper's learning curves.
 - The teacher–student experiment uses a synthetic teacher and is not RL.
 - SUMO 1.12.0 instead of 1.0.1.
