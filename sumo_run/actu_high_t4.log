@@ -1,0 +1,72 @@
+nohup: ignoring input
+/home/barbienigam/miniforge3/envs/drl/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:523: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/home/barbienigam/miniforge3/envs/drl/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:524: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/home/barbienigam/miniforge3/envs/drl/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:525: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/home/barbienigam/miniforge3/envs/drl/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:526: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/home/barbienigam/miniforge3/envs/drl/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:527: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/home/barbienigam/miniforge3/envs/drl/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:532: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+Using TensorFlow backend.
+[[<Phase.E: [2]>, <Phase.W: [6]>], [<Phase.E: [2]>, <Phase.E_L: [5]>], [<Phase.W_L: [1]>, <Phase.W: [6]>], [<Phase.W_L: [1]>, <Phase.E_L: [5]>], [<Phase.NN_L: [8, 3]>, <Phase.SS_L: [4, 7]>], [<Phase.NN_L: [8, 3]>, <Phase.S: [4]>], [<Phase.NN_L: [8, 3]>, <Phase.N_L: [3]>], [<Phase.N: [8]>, <Phase.SS_L: [4, 7]>], [<Phase.N: [8]>, <Phase.S: [4]>], [<Phase.S_L: [7]>, <Phase.SS_L: [4, 7]>], [<Phase.S_L: [7]>, <Phase.N_L: [3]>]]
+ Retrying in 1 seconds
+***Starting server on port 51043 ***
+Loading net-file from 'Data4-0/State_Street_4500_South.net.xml' ... done (3ms).
+Loading additional-files from 'Data4-0/State_Street_4500_South.det.xml' ... done (39ms).
+Loading done.
+Simulation version 1.12.0 started with time: 0.00
+0 seconds passed
+Warning: Vehicle '1071' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=1309.00.
+Warning: Vehicle '2827' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=2958.00.
+Warning: Vehicle '4281' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=4110.00.
+5000 seconds passed
+Warning: Vehicle '6832' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=6298.00.
+Warning: Vehicle '10848' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=9856.00.
+10000 seconds passed
+Warning: Vehicle '14119' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=12841.00.
+Warning: Vehicle '14362' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=13059.00.
+Warning: Vehicle '14706' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=13308.00.
+Warning: Vehicle '15251' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=13794.00.
+Warning: Vehicle '15811' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=14226.00.
+15000 seconds passed
+Warning: Vehicle '17215' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=15302.00.
+Warning: Vehicle '19255' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=16919.00.
+Warning: Vehicle '20853' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=18084.00.
+Warning: Vehicle '23557' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=19983.00.
+20000 seconds passed
+Warning: Vehicle '24428' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=20578.00.
+Warning: Vehicle '28028' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=23116.00.
+Warning: Vehicle '28495' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=23462.00.
+25000 seconds passed
+Warning: Vehicle '36869' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=29407.00.
+30000 seconds passed
+Warning: Vehicle '40191' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=31703.00.
+35000 seconds passed
+40000 seconds passed
+Warning: Vehicle '55397' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=41723.00.
+Warning: Vehicle '57128' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=43104.00.
+Warning: Vehicle '59113' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=44805.00.
+45000 seconds passed
+Warning: Vehicle '60983' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=46651.00.
+Warning: Vehicle '62448' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=48129.00.
+Warning: Vehicle '62664' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=48311.00.
+50000 seconds passed
+Warning: Vehicle '64596' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=50268.00.
+55000 seconds passed
+Simulation ended at time: 55001.00
+Reason: TraCI requested termination.
+Performance: 
+ Duration: 2036.16s
+ TraCI-Duration: 1945.03s
+ Real time factor: 27.0121
+ UPS: 5554.441641
+Vehicles: 
+ Inserted: 64784
+ Running: 0
+ Waiting: 0
+
+4-0 Completed iteration trips 64784 loss 58.37179102864902 steps 55001 rush 92.5320006965 dead 26.25243078530378
