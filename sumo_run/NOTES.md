@@ -32,7 +32,7 @@ Mean time lost is about 1% above the actuated Low run, smaller than the 7% diffe
 we draw no conclusion about DRHQ versus actuated control. The rush-hour mean is about 12 s lower, but our two High runs
 differed by 16.7 s in rush-hour mean, so we do not claim an improvement. The first-hour mean ("dead hour") is much higher
 (corrected 66.43 s vs 30.85 s for actuated); a plausible reason is an untrained policy early in the episode, not tested.
-The run wrote `poly.fn` (23,904 bytes, from the polynomial agent in `drxq.py`; not opened) and `policy.net` (not uploaded).
+The run wrote poly.fn (23,904 bytes, HDF5, from the polynomial agent in drxq.py) and policy.net (not uploaded). poly.fn holds weights and exponents of shape (11, 16) each (352 parameters); see 8_poly_weights.png and poly_drhq_low_trial5.csv. All 352 values differ from 1.0 by more than 0.001 after one episode (starting values not checked in networks.py).
 
 ## Observation about the released code
 `traci_env.get_delay()` (line 353) returns `dh_loss / rh_trips`, dividing the dead-hour total by the
@@ -65,3 +65,5 @@ No DQN, DRQ or DRSQ training. This is not a reproduction of the paper's results.
 - `tripinfo/`: compressed raw trip data for runs 1-5
 - `poly.fn`: polynomial file written by the DRHQ run
 - `RESULTS_actuated_three_demand.md`: actuated results tables
+- `poly_drhq_low_trial5.csv`: the learned weights and exponents from run 5
+- `8_poly_weights.png`: screenshot of the same table
