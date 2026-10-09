@@ -1,0 +1,91 @@
+nohup: ignoring input
+/home/barbienigam/miniforge3/envs/drl/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:523: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/home/barbienigam/miniforge3/envs/drl/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:524: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/home/barbienigam/miniforge3/envs/drl/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:525: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/home/barbienigam/miniforge3/envs/drl/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:526: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/home/barbienigam/miniforge3/envs/drl/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:527: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/home/barbienigam/miniforge3/envs/drl/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:532: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+Using TensorFlow backend.
+[[<Phase.E: [2]>, <Phase.W: [6]>], [<Phase.E: [2]>, <Phase.E_L: [5]>], [<Phase.W_L: [1]>, <Phase.W: [6]>], [<Phase.W_L: [1]>, <Phase.E_L: [5]>], [<Phase.NN_L: [8, 3]>, <Phase.SS_L: [4, 7]>], [<Phase.NN_L: [8, 3]>, <Phase.S: [4]>], [<Phase.NN_L: [8, 3]>, <Phase.N_L: [3]>], [<Phase.N: [8]>, <Phase.SS_L: [4, 7]>], [<Phase.N: [8]>, <Phase.S: [4]>], [<Phase.S_L: [7]>, <Phase.SS_L: [4, 7]>], [<Phase.S_L: [7]>, <Phase.N_L: [3]>]]
+ Retrying in 1 seconds
+***Starting server on port 37585 ***
+Loading net-file from 'Data5-0/State_Street_4500_South.net.xml' ... done (2ms).
+Loading additional-files from 'Data5-0/State_Street_4500_South.det.xml' ... done (16ms).
+Loading done.
+Simulation version 1.12.0 started with time: 0.00
+2026-10-10 03:15:07.182348: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+0 seconds passed
+/home/barbienigam/StateStreetSumo/replay_buffer.py:38: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  obses_t.append(np.array(obs_t, copy=False))
+/home/barbienigam/StateStreetSumo/replay_buffer.py:41: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  obses_tp1.append(np.array(obs_tp1, copy=False))
+/home/barbienigam/StateStreetSumo/replay_buffer.py:43: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return np.array(obses_t), np.array(actions), np.array(rewards), np.array(obses_tp1), np.array(dones)
+Warning: Vehicle '2606' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=3294.00.
+Warning: Vehicle '3223' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=4074.00.
+5000 seconds passed
+10000 seconds passed
+Warning: Vehicle '11754' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=13752.00.
+Warning: Vehicle '12561' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=14691.00.
+15000 seconds passed
+Warning: Vehicle '12998' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=15177.00.
+Warning: Vehicle '13377' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=15568.00.
+20000 seconds passed
+Warning: Vehicle '19184' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=21606.00.
+Warning: Vehicle '22399' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=24970.00.
+25000 seconds passed
+Warning: Vehicle '24821' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=27375.00.
+Warning: Vehicle '27109' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=29619.00.
+30000 seconds passed
+Warning: Vehicle '32484' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=34443.00.
+35000 seconds passed
+Warning: Vehicle '33326' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=35097.00.
+Warning: Vehicle '35729' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=36956.00.
+Warning: Vehicle '35736' performs emergency braking with decel=-9.00 wished=4.50 severity=1.00, time=36956.00.
+40000 seconds passed
+45000 seconds passed
+50000 seconds passed
+55000 seconds passed
+Data5-0/poly.fn
+2.6557631, 0.66281295, 1.762585, 1.3528483e-08, 1.5898874, 1.5485649, 3.6793928, 1.4459918, 3.3101027, 1e-08, 2.0716343, 0.5778843, 1.6470279, 1.604534, 1.6618373, 1.7236637, 
+0.46143958, 0.049159598, 1.8426071, 0.6823593, 0.4470515, 1.5534612, 1.8311489, 0.6030232, 6.2095714, 0.0032997592, 1.3534083, 0.951738, 1.7705783, 1.9220144, 2.1324697, 3.6846821, 
+3.176428, 1.4670599, 4.920561, 0.0006143812, 1.893151, 1.3491291, 2.6396239, 0.37087715, 2.0196164, 0.11661672, 2.4672678, 0.9552822, 1.5433977, 1.6612868, 1.8711011, 1.4177701, 
+2.800011, 0.37161425, 2.5194433, 0.63365585, 1.4024878, 0.35191998, 2.3240595, 0.68870515, 3.0054743, 0.028466098, 1.381346, 1.09166, 1.5926274, 1.7771387, 1.5736405, 0.9855313, 
+2.2831833, 0.5146282, 2.6137645, 0.89195746, 1.4950393, 1.1515075, 4.097405, 0.16681094, 3.7974622, 0.0385047, 2.629415, 1.3154336, 1.4156572, 0.9804017, 1.7569934, 1.8130205, 
+1.9920659, 1.1422596, 0.98110074, 0.96126956, 1.9639515, 0.46645346, 4.730477, 1e-08, 1.4926039, 1e-08, 2.6892014, 1.4433885, 1.5747968, 1.6987112, 1.7907252, 1.6577682, 
+3.811117, 0.055468637, 3.3979063, 4.5445564e-08, 3.7663388, 0.78841263, 0.031764735, 1e-08, 2.5833123, 0.0046582096, 0.031764735, 0.0127614215, 1.2859855, 1.4494548, 1.5549427, 1.487627, 
+2.4466798, 1.3645253, 1.7839657, 1.2000546, 2.6246054, 0.015125137, 1.1358945, 0.3369871, 1.2043709, 0.393159, 1.0902163, 0.080570206, 1.2641784, 1.5603625, 1.6550944, 1.6136178, 
+1.8669128, 1.2032591, 1.5598702, 0.0015018926, 1.4427345, 1.0186613, 1.252103, 1.4264694, 1.2026488, 1e-08, 1.2664241, 0.41410652, 1.0791941, 0.61023474, 1e-08, 1.530775, 
+1e-08, 1e-08, 0.027916266, 1e-08, 1e-08, 1e-08, 1e-08, 1e-08, 1e-08, 1e-08, 1e-08, 1e-08, 0.020837136, 1.2643986, 0.46470726, 0.565882, 
+1e-08, 1e-08, 1e-08, 1e-08, 1e-08, 2.2438018, 0.91427594, 1e-08, 0.87524647, 0.5008209, 0.91427594, 0.88698566, 1.5464194, 1.7517236, 0.39834276, 1.672678, 
+---
+0.52144676, 0.97783566, 0.40382105, 2.2101383, 0.0030654417, 0.9896624, 0.6480176, 0.72773457, 0.3256896, 2.0631666, 9.438563e-05, 1.2935481, 1.5082246, 1.8220903, 2.0830708, 0.44316182, 
+0.6611672, 1.4322404, 0.465487, 0.014242272, 0.776196, 1.159937, 0.6332174, 0.9562424, 0.71033067, 1.853271, 0.7502469, 1.2062203, 2.0488567, 2.0759344, 2.416733, 0.29708704, 
+0.5547912, 1.2507187, 0.56426835, 0.7702791, 1.0067601, 1.4371656, 0.7630044, 0.0012421631, 0.4592675, 1e-08, 0.73136795, 1.1743904, 1.7564425, 1.7044717, 2.0105824, 0.5604545, 
+0.7928585, 0.51353836, 0.5323544, 1.4842918, 0.33098316, 0.9384292, 1.0749289, 0.9464638, 0.50217426, 1.0608909, 0.5872907, 1.8745221, 2.2897441, 2.4221563, 2.2117724, 0.8661296, 
+0.7616333, 0.92666316, 1.3223683, 0.11072825, 0.24818738, 0.024784248, 1.7357067, 1.2707407, 0.7915686, 0.8442336, 0.46358696, 2.5531898, 1.7992414, 0.9619646, 1.9678304, 1.8768126, 
+0.8712271, 1.3113948, 0.53653103, 0.83169705, 0.6340038, 0.039852217, 1.6236207, 1.7039053, 0.048458517, 1.7672892, 0.97318745, 2.3498325, 1.6365708, 2.0591624, 2.035582, 1.9492236, 
+0.82734656, 1.279116, 0.5021918, 1.9078567, 0.50680935, 0.4784409, 1e-08, 1.6803502, 1.7234733, 2.933639, 1e-08, 1e-08, 1.5850767, 1.7917491, 2.0089102, 1.6576344, 
+1.052472, 0.53584653, 0.62540036, 1.3604571, 0.3463779, 0.07252185, 0.8998295, 0.066829406, 0.60605395, 1.7476652, 0.74770486, 1.7582549, 2.4386435, 1.9677023, 1.9255264, 1.8063248, 
+1.3923982, 1e-08, 0.41069406, 1.0489011, 0.46840325, 0.7671152, 0.7478279, 1e-08, 0.5755732, 1.2911712, 0.044733863, 0.7156136, 2.0510843, 1.7493114, 1.8215994, 1.9308019, 
+1.0890688, 1.2049713, 1.2911153, 1.6318421, 1.0890688, 1.2951173, 1.2413608, 1.1198121, 1.1828021, 1.4597018, 1.1059014, 1.8110322, 2.2180066, 1.3691021, 1.8354317, 1.6122688, 
+1.4459865, 1.5535845, 1.754192, 1.6827753, 1.4459865, 0.013522919, 0.8166292, 1.5679501, 0.69617844, 1.1643324, 0.8166292, 0.58938605, 2.1427832, 2.4322233, 1.5988219, 2.9889383, 
+Simulation ended at time: 55005.00
+Reason: TraCI requested termination.
+Performance: 
+ Duration: 1247.91s
+ TraCI-Duration: 1213.49s
+ Real time factor: 44.0776
+ UPS: 6000.762873
+Vehicles: 
+ Inserted: 47152
+ Running: 0
+ Waiting: 0
+
+5-0 Completed iteration trips 47152 loss 42.614638191381026 steps 10343 rush 52.21066681099794 dead 41.92213033124063
