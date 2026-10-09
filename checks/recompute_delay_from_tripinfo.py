@@ -3,14 +3,15 @@ Recompute the authors' delay metrics from SUMO's tripinfo.xml (independent check
 
 Usage (from ~/StateStreetSumo, after a run):
     python <path>/recompute_delay_from_tripinfo.py Data0-0/tripinfo.xml --file 0
-    # or give the windows explicitly:  --rush 33900 --dead 0
+    python <path>/recompute_delay_from_tripinfo.py sumo_run/tripinfo/low_trial0.xml.gz --rush 33900 --dead 0
+The input may be plain .xml or gzip-compressed .xml.gz.
 
 Reproduces the authors' printed numbers AND the corrected dead-hour average.
 Authors' get_delay() returns  dh_loss / rh_trips  (rush-hour trip count) on its last line;
 the dead-hour total should be divided by the dead-hour trip count (dh_trips).
 Works on Python 3.6+.
 """
-import sys, argparse
+import sys, gzip, argparse
 import xml.etree.ElementTree as ET
 
 ap = argparse.ArgumentParser()
@@ -29,18 +30,21 @@ if rush is None or dead is None:
         dead = shared.dead[a.file] if dead is None else dead
         print("rush/dead start (from shared.py): %s / %s" % (rush, dead))
     except Exception as e:
-        sys.exit("Could not read shared.py (%s). Pass --rush and --dead explicitly." % e)
+        sys.exit("Could not read shared.py (%s). Pass --rush and --dead explicitly "
+                 "(Low: --rush 33900 --dead 0; Medium and High: --rush 34200 --dead 0)." % e)
 
+opener = gzip.open if a.tripinfo.endswith(".gz") else open
 trips = 0; loss = 0.0; max_delay = 0.0
 rh_trips = rh_loss = dh_trips = dh_loss = 0
-for _, el in ET.iterparse(a.tripinfo):
-    if el.tag != "tripinfo":
-        continue
-    tl = float(el.get("timeLoss")); dep = float(el.get("depart"))
-    trips += 1; loss += tl; max_delay = max(max_delay, tl)
-    if rush <= dep <= rush + 3600: rh_loss += tl; rh_trips += 1
-    if dead <= dep <= dead + 3600: dh_loss += tl; dh_trips += 1
-    el.clear()
+with opener(a.tripinfo, "rb") as fh:
+    for _, el in ET.iterparse(fh):
+        if el.tag != "tripinfo":
+            continue
+        tl = float(el.get("timeLoss")); dep = float(el.get("depart"))
+        trips += 1; loss += tl; max_delay = max(max_delay, tl)
+        if rush <= dep <= rush + 3600: rh_loss += tl; rh_trips += 1
+        if dead <= dep <= dead + 3600: dh_loss += tl; dh_trips += 1
+        el.clear()
 
 print("trips                         :", trips)
 print("loss  (mean timeLoss, s)      : %.6f" % (loss / trips))
