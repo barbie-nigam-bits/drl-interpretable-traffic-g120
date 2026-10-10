@@ -3,7 +3,7 @@
 
 - Paper: https://arxiv.org/abs/1912.11023
 - Authors' code: https://github.com/jault/StateStreetSumo (single commit `af68c16`)
-- Video: `<ADD GOOGLE DRIVE LINK>`
+- Video: https://drive.google.com/file/d/1FAG7hpmjuga0X1BCUL7q-GAqoG-YwsDJ/view?usp=sharing
 
 This repository is our **proof of work** for the assignment. It contains (1) code we wrote to check the paper's
 definitions, (2) our runs of the authors' code in SUMO, and (3) independent checks of the numbers those runs produced.
