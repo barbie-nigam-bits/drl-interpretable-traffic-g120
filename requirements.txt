@@ -2,6 +2,7 @@
 numpy
 matplotlib
 scikit-learn
+h5py
 
 # Authors' code (jault/StateStreetSumo) was run in a separate Python 3.6.15 environment with:
 #   gym==0.12.1
