@@ -35,4 +35,4 @@ The two High runs differ by 3.7 s (about 7%) in mean time lost, so a single run 
 Not reconciled with Table 1.
 
 ## Scope
-No learning agent was trained. Not a reproduction of the paper's DRHQ results.
+This file covers the actuated baseline only (one episode for Low and Medium, two for High). The one exploratory DRHQ episode (Low demand, trial 5) is in NOTES.md and in the README, section 2.5. Not a reproduction of the paper's results.
