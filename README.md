@@ -9,7 +9,7 @@ This repository is our **proof of work** for the assignment. It contains (1) cod
 definitions, (2) our runs of the authors' code in SUMO, and (3) independent checks of the numbers those runs produced.
 
 **Scope.** We ran the authors' *actuated* baseline (one episode each for Low and Medium demand, two for High demand) and
-**one exploratory DRHQ episode** on Low demand. We did **not** train DQN, DRQ or DRSQ in SUMO, we did **not** run the paper's
+**one exploratory DRHQ episode** on Low demand. We did **not** run the standalone DQN, DRQ or DRSQ agents in SUMO (the DRHQ agent trains a DQN internally as its teacher), we did **not** run the paper's
 full protocol (40 episodes × 30 trials), and we do **not** claim to reproduce the paper's 19.4% / 30% delay reductions.
 
 ---
@@ -207,7 +207,7 @@ and other demand levels may take longer.
 ## 5. Limitations
 - One actuated episode for Low and Medium and two for High. The two High runs differ by about 7% in mean delay, so there are
   no confidence intervals and single-run comparisons with the paper are only indicative.
-- DRHQ: one exploratory episode on Low demand only. No DQN, DRQ or DRSQ training in SUMO, so no comparison against the paper's
+- DRHQ: one exploratory episode on Low demand only. No standalone DQN, DRQ or DRSQ runs in SUMO, so no comparison against the paper's
   learning curves.
 - The teacher–student experiment uses a synthetic teacher and is not RL.
 - SUMO 1.12.0 instead of 1.0.1.
