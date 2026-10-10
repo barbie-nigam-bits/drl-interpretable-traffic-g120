@@ -182,6 +182,7 @@ pip install -r requirements.txt
 python checks/check_parameters_and_monotonicity.py
 python checks/table1_and_arithmetic_checks.py <path-to>/StateStreetSumo/utils
 python src/teacher_student.py 10
+python checks/print_poly_weights.py sumo_run/poly.fn
 ```
 
 Recompute the delay metrics from the stored trip data, without SUMO (Low: `--rush 33900`; Medium and High: `--rush 34200`):
@@ -221,4 +222,4 @@ and other demand levels may take longer.
 | Barbie Nigam (2025AG05716) | Limitations and open questions; critical reflection and future work. Resubmission proof of work: all code, checks, experiments, SUMO runs and evidence in this repository | Slides 10–27, original recording, commit history |
 | S Shamilee (2025AG05065) | Additional points, validation and consolidated summary | Slides 28–30, original recording |
 
-The proof of work in this repository was added for the resubmission; see the commit history.
+All proof of work in this repository is dated in the commit history.
