@@ -54,7 +54,7 @@ the paper (Sec. 6.1) spawns vehicles randomly.
 
 ## Scope
 Actuated baseline: one episode for Low and Medium, two for High. DRHQ: one exploratory episode on Low demand.
-No DQN, DRQ or DRSQ training. This is not a reproduction of the paper's results.
+No standalone DQN, DRQ or DRSQ runs (the DRHQ agent trains a DQN internally as its teacher). This is not a reproduction of the paper's results.
 
 ## Files in this folder
 - Screenshots: `1_run_log_and_perf.png`, `2_recompute_check.png`, `3_three_demand_results.png`, `4_high_run2_and_perf.png`,
@@ -63,7 +63,7 @@ No DQN, DRQ or DRSQ training. This is not a reproduction of the paper's results.
 - Results rows written by the authors' code (no header; columns: trial, episode, trips, missed, loss, steps, rush, dead,
   max delay, max queue): `actu_low_perf.csv`, `perf_all_three.csv`, `perf_all_runs.csv`, `drhq_low_perf.csv`
 - `tripinfo/`: compressed raw trip data for runs 1-5
-- `poly.fn`: polynomial file written by the DRHQ run
+- poly.fn: polynomial (weights and exponents, 11 × 16 each) written by the DRHQ run; read with checks/print_poly_weights.py
 - `RESULTS_actuated_three_demand.md`: actuated results tables
 - `poly_drhq_low_trial5.csv`: the learned weights and exponents from run 5
 - `8_poly_weights.png`: screenshot of the same table
